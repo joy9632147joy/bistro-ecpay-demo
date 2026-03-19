@@ -1,0 +1,428 @@
+/* -----導覽列----- */
+nav.navBarbackcolor {
+    background-color: transparent;
+    transition: background-color 1.5s ease;
+    backdrop-filter: blur(1px);
+}
+
+nav.navbar.scrolled {
+    background-color: rgba(35, 55, 62, 0.95);
+    transition: background-color 1.5s ease;
+}
+
+a.navbar-brand {
+    font-size: 35px;
+    font-family: "Noto Serif TC", sans-serif;
+    align-items: center;
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.weblogo {
+    object-fit: contain;
+    width: 120px;
+    max-height: 100px;
+    transition: transform 0.3s;
+}
+
+.weblogo,
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* -----漢堡----- */
+.navbar-toggler:focus {
+    border-radius: 10px;
+    box-shadow: none;
+    border: 1px solid #ebe0cc;
+}
+
+ul.navBar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.navBar li {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    font-family: "Noto Serif TC", sans-serif;
+}
+
+ul.navBar li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+ul.navBar li a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+
+
+/* --- RWD 手機版微調 --- */
+@media (max-width: 991px) {
+
+    /* 1. 設定下拉選單外觀 */
+    .navbar-collapse {
+        background-color: rgba(35, 55, 62, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* 2. 讓選項變成直排 */
+    ul.navBar li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 3. 調整連結點擊範圍 */
+    ul.navBar li a {
+        padding: 10px 0;
+    }
+
+}
+
+
+/*-----背景封面-----*/
+body,
+html {
+    height: 70%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.bg-image {
+    background-image: url("../mainpageimg/活動背景.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bg-text {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 800px;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* --- 活動資訊區塊樣式 --- */
+.events-section,
+.major-section {
+    background-color: #111C20;
+    padding: 50px 0;
+    color: #e0e0e0;
+}
+
+/* 不跑版 */
+.activity-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+}
+
+.activity-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.5s ease;
+}
+
+
+/* 活動資訊標題+分類按鈕 */
+.bright-word {
+    background-color: rgba(197, 160, 89, 0.2);
+    color: #C5A059;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.main-title {
+    color: #C5A059;
+    font-size: 2.5rem;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.sub-description {
+    color: #888;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+
+.btn-group {
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+.btn-year {
+    background-color: transparent;
+    border: 1px solid #C5A059;
+    color: #C5A059;
+    font-family: "Noto Serif TC", sans-serif;
+    padding: 8px 20px;
+    border-radius: 5px !important;
+    /* 用了BS5按鈕群組 只能這樣強制用圓角 不然就是不要群組 按鈕一個一個放 */
+    transition: all 0.3s ease;
+}
+
+
+.btn-year:hover,
+.btn-year.active {
+    background-color: #C5A059;
+    color: #23373E;
+    border-color: #C5A059;
+    transform: translateY(-2px);
+}
+
+
+
+/* 立即預約按鈕樣式 */
+.btn-booking {
+    background-color: transparent;
+    border: 1px solid #C5A059;
+    color: #C5A059;
+    font-size: 0.9rem;
+    padding: 15px 30px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.btn-booking:hover {
+    background-color: #C5A059;
+    color: #23373E;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
+}
+
+
+/* 卡片發亮 */
+#memory-content .row,
+#major-content .row {
+    /* 線性漸層 去看Tips筆記 */
+    background: linear-gradient(135deg,
+            rgba(30, 45, 50, 0.3) 0%,
+            rgba(20, 30, 35, 0.5) 100%);
+
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    border-radius: 4px;
+
+    padding: 30px;
+
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+#memory-content .row:hover,
+#major-content .row:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px #ebe0cc;
+}
+
+/* 歷史活動2024 5 標籤 */
+.badge {
+    background-color: rgba(197, 160, 89, 0.9);
+    color: #23373E;
+    border-radius: 0;
+}
+
+/* 重點項目 */
+.activity-info .fw-bold {
+    background: rgba(197, 160, 89, 0.08);
+    border-left: 3px solid #C5A059;
+    padding: 15px 20px;
+    margin-top: 20px;
+}
+
+
+
+#news-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.activity-info {
+    font-size: 1.05rem;
+}
+
+
+
+@media (max-width: 768px) {
+
+    /* 後代選擇 記得空格 */
+    /* 圖片區塊填滿寬度 */
+    #memory-content .event-card-wrapper .col-5,
+    #memory-content .event-card-wrapper .col-7 {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+/* --- 活動列 Layout --- */
+.activity-section,
+.activity-major-section {
+    background-color: #111C20;
+    min-height: 60vh;
+}
+
+#memory-content {
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.event-card-wrapper {
+    min-height: 280px;
+    height: 100%;
+}
+
+#memory-content .col-12 .col-lg-6 {
+    display: flex;
+}
+
+/* 讓所有卡片高度一致 */
+.activity-section .event-card-wrapper {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 圖片放大 */
+.event-img-small {
+    width: 100%;
+    height: 220px;
+}
+
+.event-img-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+/* -----底部聯絡資訊----- */
+.main-footer {
+    background-color: rgba(35, 55, 62, 0.95);
+    color: #bbb;
+    font-size: 1.2rem;
+}
+
+.footer-logo {
+    width: 220px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+/* ----- 右邊：社群 Icon 設定 ----- */
+.social-icons-group {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons-group a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.social-icons-group i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons-group a:hover i {
+    color: #e8c687;
+}
+
+/* --- 中間：聯絡我們文字設定 --- */
+.footer-contact-list li {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        width: 160px;
+    }
+}
+
+
+.footer-warning {
+    background-color: #000;
+    color: #888;
+    border-top: 1px solid #333;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+
+/* 至頂箭頭 */
+ #myBtn {
+     opacity: 0;
+     pointer-events: none;
+     position: fixed;
+     bottom: 80px;
+     right: 30px;
+     z-index: 99;
+     border: none;
+     background-color: rgba(35, 55, 62, 0.95);
+     color: #ebe0cc;
+     padding: 15px;
+     border-radius: 10px;
+     font-size: 18px;
+ }
+
+ #myBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+ #myBtn:hover {
+     background-color: #555;
+     cursor: pointer;
+     transform: scale(1.1);
+ }

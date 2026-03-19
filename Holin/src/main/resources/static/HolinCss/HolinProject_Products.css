@@ -1,0 +1,769 @@
+/* -----導覽列----- */
+nav.navBarbackcolor {
+    background-color: transparent;
+    transition: background-color 1.5s ease;
+    backdrop-filter: blur(1px);
+}
+
+nav.navbar.scrolled {
+    background-color: rgba(35, 55, 62, 0.95);
+    transition: background-color 1.5s ease;
+}
+
+a.navbar-brand {
+    font-size: 35px;
+    font-family: "Noto Serif TC", sans-serif;
+    align-items: center;
+    display: flex;
+    transition: transform 0.3s;
+}
+
+.weblogo {
+    object-fit: contain;
+    width: 120px;
+    max-height: 100px;
+    transition: transform 0.3s;
+}
+
+.weblogo:hover {
+    transform: scale(1.05);
+}
+
+a.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+/* -----漢堡----- */
+.navbar-toggler:focus {
+    border-radius: 10;
+    box-shadow: none;
+    border: 1px solid #ebe0cc;
+}
+
+ul.navBar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.navBar li {
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    font-family: "Noto Serif TC", sans-serif;
+}
+
+ul.navBar li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+ul.navBar li a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+
+.social-gap {
+    margin-left: 25px;
+}
+
+
+/* 滑鼠移上去的效果 */
+.navbar .btn-login:hover {
+    background-color: #C5A059;
+    color: #23373E;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.6);
+    transform: translateY(-2px);
+}
+
+/* ----- RWD ----- */
+@media (max-width: 991px) {
+
+    /* 1. 設定下拉選單外觀 */
+    .navbar-collapse {
+        background-color: rgba(35, 55, 62, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* 2. 讓選項變成直排 */
+    ul.navBar li {
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 3. 調整連結點擊範圍 */
+    ul.navBar li a {
+        padding: 10px 0;
+    }
+}
+
+
+
+/*----- 背景封面 -----*/
+body,
+html {
+    height: 70%;
+    background-color: #111C20;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.bg-image {
+    background-image: url("../mainpageimg/瓶裝酒.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* 手機版字體微調 */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-desc {
+        font-size: 0.95rem;
+        padding: 0 20px;
+    }
+}
+
+
+
+/* ----- 重頭戲酒單 ----- */
+
+/* 標題 */
+.bright-word {
+    background-color: rgba(197, 160, 89, 0.2);
+    color: #C5A059;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.main-title {
+    color: #C5A059;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.sub-description {
+    color: #888;
+    font-family: "Noto Serif TC", sans-serif;
+    letter-spacing: 1px;
+}
+
+/* 篩選按鈕 */
+.btn-group {
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+
+.btn-custom {
+    background-color: transparent;
+    border: 1px solid #C5A059;
+    color: #C5A059;
+    font-family: "Noto Serif TC", sans-serif;
+    padding: 8px 20px;
+    border-radius: 5px !important;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .btn-custom {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+        flex: 0 0 100%;
+    }
+
+    .btn-group {
+        gap: 10px;
+    }
+}
+
+
+.btn-custom:hover,
+.btn-custom.active {
+    background-color: #C5A059;
+    color: #23373E;
+    border-color: #C5A059;
+    font-weight: bold;
+    transform: translateY(-2px);
+}
+
+
+.beertext[class^=btn-custom] {
+    color: #C5A059;
+    font-family: "Noto Serif TC", sans-serif;
+
+}
+
+
+/* ----- 酒卡片本體 ----- */
+.product-card {
+    background-color: rgb(243, 232, 213);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    /* 確保高度一致 */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 圖片區塊 */
+.beer-box {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.beer-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center;
+    transition: transform 0.5s ease;
+}
+
+
+
+/* 手機版圖片調整 */
+@media (max-width: 768px) {
+    .beer-box {
+        height: 300px;
+    }
+}
+
+
+/* 文字區塊 */
+.text-box {
+    padding: 15px;
+    text-align: center;
+}
+
+/* 1. 產品名稱 */
+.product-name {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: rgba(35, 55, 62, 0.95);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 2. 規格 (容量 濃度) */
+.product-specs {
+    font-size: 0.9rem;
+    color: #999999;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+/* 3. 價格 */
+.price {
+    color: #C5A059;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .product-card .beer-box {
+        height: 400px;
+        width: 100%;
+        padding: 0;
+    }
+
+    /* 2. 圖片設定：完整顯示 (Contain) */
+    .product-card .beer-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        /* 置中 */
+    }
+}
+
+
+/* -----底部聯絡資訊----- */
+.main-footer {
+    background-color: rgba(35, 55, 62, 0.95);
+    color: #bbb;
+    font-size: 1.2rem;
+}
+
+.footer-logo {
+    width: 220px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+/* ----- 右邊：社群 Icon 設定 ----- */
+.social-icons-group {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons-group a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.social-icons-group i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons-group a:hover i {
+    color: #e8c687;
+}
+
+/* --- 中間：聯絡我們文字設定 --- */
+.footer-contact-list li {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* 手機版適應 (當螢幕變窄時) */
+@media (max-width: 768px) {
+    .footer-logo {
+        width: 160px;
+    }
+
+
+}
+
+
+.footer-warning {
+    background-color: #000;
+    color: #888;
+    border-top: 1px solid #333;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+
+/* 至頂箭頭 */
+#myBtn {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    background-color: rgba(35, 55, 62, 0.95);
+    color: #ebe0cc;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#myBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#myBtn:hover {
+    background-color: #555;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+/* ===== 酒類「收藏」按鈕 (卡片上) ===== */
+.fav-btn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #e87070;
+    color: #e87070;
+    font-family: "Noto Serif TC", sans-serif;
+    font-size: 0.9rem;
+    padding: 7px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 1px;
+}
+
+.fav-btn:hover {
+    background-color: #e87070;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.fav-btn.favorited {
+    background-color: #e87070;
+    border-color: #e87070;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* ===== 周邊「加入購物車」按鈕 (卡片上) ===== */
+.add-to-cart-btn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #C5A059;
+    color: #C5A059;
+    font-family: "Noto Serif TC", sans-serif;
+    font-size: 0.9rem;
+    padding: 7px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 1px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #C5A059;
+    color: #23373E;
+    font-weight: bold;
+    transform: translateY(-1px);
+}
+
+.add-to-cart-btn.added {
+    background-color: #5a8a5a;
+    border-color: #5a8a5a;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* ===== 浮動按鈕 (共用) ===== */
+#fav-float-btn,
+#cart-float-btn {
+    position: fixed;
+    right: 30px;
+    z-index: 200;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#fav-float-btn {
+    bottom: 210px;
+    background-color: #e87070;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(232, 112, 112, 0.4);
+}
+
+#fav-float-btn:hover {
+    background-color: #f09090;
+    transform: scale(1.1);
+}
+
+#cart-float-btn {
+    bottom: 145px;
+    background-color: #C5A059;
+    color: #23373E;
+    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+}
+
+#cart-float-btn:hover {
+    background-color: #e8c687;
+    transform: scale(1.1);
+}
+
+#fav-count,
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e84545;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+
+/* ===== 共用遮罩 ===== */
+#panel-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+#panel-overlay.open {
+    display: block;
+}
+
+
+/* ===== 側欄共用樣式 ===== */
+#fav-panel,
+#cart-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    max-width: 95vw;
+    height: 100dvh;
+    background-color: #1a2c32;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s ease;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
+}
+
+#fav-panel {
+    z-index: 2100;
+}
+
+#cart-panel {
+    z-index: 2200;
+}
+
+#fav-panel.open,
+#cart-panel.open {
+    right: 0;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 15px;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.panel-title {
+    color: #ebe0cc;
+    font-family: "Noto Serif TC", sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.panel-close-btn {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 5px;
+}
+
+.panel-close-btn:hover {
+    color: #C5A059;
+}
+
+.panel-items-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px 20px;
+}
+
+.panel-empty {
+    color: #666;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1rem;
+    font-family: "Noto Serif TC", sans-serif;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+.panel-empty small {
+    font-size: 0.8rem;
+    color: #444;
+}
+
+/* 單筆項目列 */
+.fav-item,
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.panel-item-img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.panel-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.panel-item-name {
+    color: #ebe0cc;
+    font-size: 0.85rem;
+    font-family: "Noto Serif TC", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+}
+
+.panel-item-sub {
+    color: #888;
+    font-size: 0.75rem;
+    font-family: sans-serif;
+    margin-bottom: 3px;
+}
+
+.panel-item-price {
+    color: #C5A059;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+}
+
+/* 數量控制 (購物車用) */
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.qty-btn {
+    width: 26px;
+    height: 26px;
+    background-color: rgba(197, 160, 89, 0.15);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: #C5A059;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    background-color: #C5A059;
+    color: #23373E;
+}
+
+.qty-num {
+    color: #ebe0cc;
+    font-size: 0.9rem;
+    min-width: 18px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 3px;
+    transition: color 0.2s;
+}
+
+.remove-btn:hover {
+    color: #e84545;
+}
+
+/* 底部區域 */
+.panel-footer {
+    padding: 15px 20px 30px;
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ebe0cc;
+    font-size: 1rem;
+    font-family: "Noto Serif TC", sans-serif;
+    margin-bottom: 15px;
+}
+
+#cart-total {
+    color: #C5A059;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.panel-action-btn {
+    width: 100%;
+    background-color: #C5A059;
+    color: #23373E;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: "Noto Serif TC", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.panel-action-btn:hover {
+    background-color: #e8c687;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+}
+
+.panel-action-btn.checkout {
+    background-color: #23373E;
+    color: #C5A059;
+    border: 1px solid #C5A059;
+}
+
+.panel-action-btn.checkout:hover {
+    background-color: #C5A059;
+    color: #23373E;
+}
+
+.panel-note {
+    color: #555;
+    font-size: 0.75rem;
+    text-align: center;
+    margin: 0;
+    font-family: "Noto Serif TC", sans-serif;
+}

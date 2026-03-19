@@ -1,0 +1,425 @@
+ /* -----導覽列----- */
+ nav.navBarbackcolor {
+     background-color: transparent;
+     transition: background-color 1.5s ease;
+     backdrop-filter: blur(1px);
+ }
+
+ nav.navbar.scrolled {
+     background-color: rgba(35, 55, 62, 0.95);
+     transition: background-color 1.5s ease;
+ }
+
+ a.navbar-brand {
+     font-size: 35px;
+     font-family: "Noto Serif TC", sans-serif;
+     align-items: center;
+     display: flex;
+     transition: transform 0.3s;
+ }
+
+ .weblogo {
+     object-fit: contain;
+     width: 120px;
+     max-height: 100px;
+     transition: transform 0.3s;
+ }
+
+ .weblogo:hover {
+     transform: scale(1.05);
+ }
+
+ a.navbar-brand:hover {
+     transform: scale(1.05);
+ }
+
+
+ /* -----漢堡----- */
+ .navbar-toggler:focus {
+     border-radius: 10px;
+     box-shadow: none;
+     border: 1px solid #ebe0cc;
+ }
+
+ ul.navBar {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ ul.navBar li {
+     display: inline-block;
+     color: white;
+     font-size: 18px;
+     font-family: "Noto Serif TC", sans-serif;
+ }
+
+ ul.navBar li a:hover {
+     background-color: rgba(255, 255, 255, 0.1);
+     cursor: pointer;
+ }
+
+ ul.navBar li a {
+     color: white;
+     text-align: center;
+     text-decoration: none;
+     display: block;
+     padding: 20px;
+ }
+
+
+
+ /* --- RWD 手機版微調 --- */
+ @media (max-width: 991px) {
+
+     /* 1. 設定下拉選單外觀 */
+     .navbar-collapse {
+         background-color: rgba(35, 55, 62, 0.5);
+         padding: 10px;
+         border-radius: 5px;
+     }
+
+     /* 2. 讓選項變成直排 (block) */
+     ul.navBar li {
+         display: block;
+         width: 100%;
+         text-align: center;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     }
+
+     /* 3. 調整連結點擊範圍 */
+     ul.navBar li a {
+         padding: 10px 0;
+     }
+
+ }
+
+
+ /* -----背景圖----- */
+ body,
+ html {
+     height: 70%;
+     background-color: #F2EFE9;
+ }
+
+ * {
+     box-sizing: border-box;
+ }
+
+ .bg-image {
+     background-image: url("../aboutimg/holin.png");
+     height: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+
+
+ /* -----關於我們----- */
+
+ /* 標題 */
+
+ .bright-word {
+     background-color: rgba(197, 160, 89, 0.2);
+     color: #C5A059;
+     padding: 5px 15px;
+     font-size: 0.8rem;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     border-radius: 2px;
+ }
+
+ .main-title {
+     color: #C5A059;
+     font-size: 2.5rem;
+     font-weight: 500;
+ }
+
+ .sub-description {
+     color: #888;
+     font-family: "Noto Serif TC", sans-serif;
+     letter-spacing: 1px;
+ }
+
+
+
+ /* 內文圖片 */
+
+ .story-section {
+     background: linear-gradient(180deg, #F2EFE9 0%, #fff 50%, #F2EFE9 100%);
+     padding: 20px 0;
+ }
+
+ .story-block {
+     display: flex;
+     align-items: center;
+     gap: 60px;
+     margin-bottom: 120px;
+ }
+
+ .story-block:nth-child(even) {
+     flex-direction: row-reverse;
+ }
+
+ .story-image {
+     flex: 1;
+     position: relative;
+     overflow: hidden;
+     border-radius: 8px;
+     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+ }
+
+ .story-image img,
+ .story-image video {
+     width: 100%;
+     height: 450px;
+     object-fit: cover;
+     transition: transform 0.6s ease;
+     display: block;
+ }
+
+ .story-image:hover img {
+     transform: scale(1.08);
+ }
+
+ .story-content {
+     flex: 1;
+     padding: 10px;
+ }
+
+ .story-content h3 {
+     color: #23373E;
+     font-size: 2rem;
+     font-weight: 600;
+     margin-bottom: 20px;
+     position: relative;
+     padding-bottom: 15px;
+ }
+
+ .story-content h3::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 60px;
+     height: 3px;
+     background: linear-gradient(90deg, #C5A059, transparent);
+ }
+
+ .story-content p {
+     color: #555;
+     font-size: 1.1rem;
+     line-height: 2;
+     font-weight: 400;
+ }
+
+ .story-highlight {
+     background-color: rgba(197, 160, 89, 0.1);
+     padding: 25px;
+     border-left: 4px solid #C5A059;
+     margin-top: 20px;
+     border-radius: 4px;
+ }
+
+ @media (max-width: 768px) {
+
+     .story-block,
+     .story-block:nth-child(even) {
+         flex-direction: column;
+         gap: 30px;
+         margin-bottom: 60px;
+     }
+
+     .story-image img {
+         height: 300px;
+     }
+
+     .main-title {
+         font-size: 2rem;
+     }
+
+     .story-content h3 {
+         font-size: 1.5rem;
+     }
+
+     .story-content p {
+         font-size: 1rem;
+     }
+ }
+
+
+
+ /* 看活動區塊 */
+ .cta-section {
+     text-align: center;
+     padding: 20px 0;
+ }
+
+ .cta-btn {
+    background: #C5A059;
+     color: rgba(35, 55, 62);
+     position: relative;
+     z-index: 1;
+     transition: all 0.3s ease;
+     font-family: "Noto Serif TC", sans-serif;
+     padding: 20px 60px;
+     font-size: large;
+     text-decoration: none;
+     border-radius: 60px;
+ }
+
+
+ .cta-btn:hover {
+     transform: translateY(-5px);
+     background: #e8c687;
+ }
+
+
+ /* -----夥伴 LOGO----- */
+.partner-section {
+    background: linear-gradient(180deg, #F2EFE9, #fff);
+    padding: 100px 0;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.partner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-decoration: none;  
+}
+
+.partner-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.partner-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+
+.partner-card:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.partner-card h5 {
+    color: #23373E;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.partner-card span {
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+
+
+ /* -----底部聯絡資訊----- */
+ .main-footer {
+     background-color: rgba(35, 55, 62, 0.95);
+     color: #bbb;
+     font-size: 1.2rem;
+ }
+
+ .footer-logo {
+     width: 220px;
+     height: auto;
+     transition: transform 0.3s;
+ }
+
+ .footer-logo:hover {
+     transform: scale(1.05);
+ }
+
+ /* ----- 右邊：社群 Icon 設定 ----- */
+ .social-icons-group {
+     display: flex;
+     justify-content: center;
+     gap: 25px;
+ }
+
+ .social-icons-group a {
+     color: #bbb;
+     text-decoration: none;
+ }
+
+ .social-icons-group i {
+     font-size: 1.5rem;
+     transition: all 0.3s ease;
+ }
+
+ .social-icons-group a:hover i {
+     color: #e8c687;
+ }
+
+ /* --- 中間：聯絡我們文字設定 --- */
+ .footer-contact-list li {
+     font-size: 1rem;
+     color: #ccc;
+     line-height: 1.8;
+ }
+
+ /* 手機版適應 (當螢幕變窄時) */
+ @media (max-width: 768px) {
+     .footer-logo {
+         width: 160px;
+     }
+
+     /* 在手機版讓聯絡資訊置中，而不是靠右 */
+     .text-md-end {
+         text-align: center;
+     }
+ }
+
+ .footer-warning {
+     background-color: #000;
+     color: #888;
+     border-top: 1px solid #333;
+     font-size: 1.5rem;
+     letter-spacing: 2px;
+ }
+
+ 
+/* 至頂箭頭 */
+ #myBtn {
+     opacity: 0;
+     pointer-events: none;
+     position: fixed;
+     bottom: 80px;
+     right: 30px;
+     z-index: 99;
+     border: none;
+     background-color: rgba(35, 55, 62, 0.95);
+     color: #ebe0cc;
+     padding: 15px;
+     border-radius: 10px;
+     font-size: 18px;
+ }
+
+ #myBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+ #myBtn:hover {
+     background-color: #555;
+     cursor: pointer;
+     transform: scale(1.1);
+ }

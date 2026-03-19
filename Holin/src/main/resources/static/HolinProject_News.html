@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HoLin53 | 活動消息</title>
+    <link rel="icon" href="./mainpageimg/Holin53_Logo.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="./HolinCss/HolinProject_News.css">
+    <script src="./HolinJS/HolinProject_News.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!-- 設定繁體中文字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body onscroll="checkScroll()">
+
+    <!-- 導覽列 -->
+    <!-- class="container-fluid"將導覽列填滿螢幕寬度(是給外層容器用的，讓容器填滿寬度) -->
+    <nav class="navbar navbar-expand-lg navbar-dark navBarbackcolor fixed-top">
+        <div class="container-fluid">
+
+            <!-- 左邊主標 -->
+            <a class="navbar-brand" href="HolinProject.html">
+                <img src="./mainpageimg/Holin53_Logo_BG.png" class="weblogo">53</a>
+
+            <!-- 螢幕小的時候有按鈕可以呈現導覽列 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopic">
+                <span class="navbar-toggler-icon"></span></button>
+
+            <!-- 導覽列副標題們 -->
+            <div class="collapse navbar-collapse" id="navbarTopic">
+                <ul class="navBar mx-auto">
+                    <li><a href="HolinProject_About.html">關於Holin</a></li>
+                    <li><a href="HolinProject_Products.html">精釀與瓶裝酒</a></li>
+                    <li><a href="HolinProject_Menu.html">小食菜單</a></li>
+                    <li><a href="HolinProject_News.html">活動資訊</a></li>
+                    <li><a href="HolinProject_ReservationAndContact.html">訂位與聯絡</a></li>
+
+                    <li class="nav-item"> <a class="nav-link" href="https://www.instagram.com/holin.53/"
+                            target="_blank">
+                            <i class="bi bi-instagram" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item "> <a class="nav-link"
+                            href="https://www.facebook.com/holin.holin53?locale=zh_TW" target="_blank">
+                            <i class="bi bi-facebook" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item"> <a class="nav-link" href="https://lin.ee/Bhou0cv" target="_blank">
+                            <i class="bi bi-line" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 背景圖 -->
+    <div class="bg-image"></div>
+
+
+
+
+
+
+    <!-- 主打活動 -->
+    <section class="events-section">
+        <div class="container">
+
+            <div class="section-header text-center mb-1">
+                <span class="bright-word">This Month's Featured</span>
+                <h2 class="main-title">即將到來</h2>
+                <p class="sub-description">瑜珈 · 駐唱 · 特色活動</p>
+            </div>
+
+    </section>
+
+
+
+    <!-- 主打活動-活動內容 -->
+    <section class="activity-major-section pb-1">
+        <div id="major-content" class="container position-relative" style="z-index: 2;">
+        </div>
+    </section>
+
+
+
+
+    <!-- 歷年活動 -->
+    <section class="events-section ">
+        <div class="container">
+
+            <div class="section-header text-center">
+                <span class="bright-word">Event Archive</span>
+                <h2 class="main-title">歷年活動</h2>
+                <p class="sub-description">精采回顧 · 多元內容</p>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center beertext fw-bold">
+                    <div class="btn-group">
+                        <!-- <button onclick="filterActivities('2026',this)" class="btn btn-year fw-bold">2026</button> -->
+                        <button onclick="filterActivities('2025',this)" class="btn btn-year fw-bold">2025</button>
+                        <button onclick="filterActivities('2024',this)" class="btn btn-year fw-bold">2024</button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- 歷年活動-活動內容 -->
+    <section class="activity-section pb-4">
+        <div id="memory-content" class="row container position-relative " style="z-index: 2;">
+        </div>
+    </section>
+
+
+
+
+
+    <!-- 底部為聯絡資訊 -->
+    <section>
+        <footer class="main-footer py-5">
+            <div class="container">
+                <div class="row align-items-center gy-4">
+
+                    <div class="col-12 col-md-4 text-center text-md-start">
+                        <a href="HolinProject.html">
+                            <img src="./mainpageimg/Holin53_Logo_BG.png" alt="Logo" class="footer-logo">
+                        </a>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center text-md-center">
+                        <ul class="list-unstyled text-secondary footer-contact-list">
+                            <li class="mb-2">
+                                <i class="bi bi-geo-alt-fill me-2 "></i>
+                                臺中市大雅區中清北街53號
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-telephone-fill me-2"></i>
+                                0917-407-408
+                            </li>
+                            <li class="mb-0">
+                                <i class="bi bi-clock-fill me-2"></i>
+                                週一~週六 18:00 - 23:00
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center">
+                        <div class="social-icons-group">
+                            <a href="https://www.facebook.com/holin.holin53?locale=zh_TW" target="_blank">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/holin.53/" target="_blank">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://lin.ee/Bhou0cv" target="_blank">
+                                <i class="bi bi-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="border-secondary my-4">
+            </div>
+        </footer>
+    </section>
+
+
+
+
+
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="btn-back-to-top">Top</button>
+
+
+    <div class="footer-warning fixed-bottom text-center py-3 fw-bold">
+        禁止酒駕 🚫 未滿十八歲 禁止飲酒
+    </div>
+
+
+</body>
+
+</html>
