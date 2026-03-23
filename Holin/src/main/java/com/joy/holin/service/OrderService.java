@@ -36,9 +36,9 @@ public class OrderService {
     @Autowired
     private MemberRepo membersRepo;
 
-    public OrderDto createOrder(OrderRequestDto orderRequestDto) {
-        // 1.查會員
-        Members member = membersRepo.findById(orderRequestDto.getMemberId())
+    public OrderDto createOrder(OrderRequestDto orderRequestDto, String userEmail) {
+        // 1. 用 Token 裡的 Email 查會員，保證絕對是本人！
+        Members member = membersRepo.findByEmail(userEmail)
                 .orElseThrow(() -> new RuntimeException("查無會員"));
 
         // 2.建立訂單
@@ -100,6 +100,26 @@ public class OrderService {
         }
         dto.setOrderItems(itemDtos);
         return dto;
+    }
+
+    public OrderDto checkout(Long orderId) {
+        // 1. 找訂單
+        Orders order = ordersRepo.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("查無訂單"));
+
+        // 2. 確認狀態是 pending 才能結帳
+        if (!"pending".equals(order.getStatus())) {
+            throw new RuntimeException("此訂單無法結帳，狀態：" + order.getStatus());
+        }
+
+        // 3. 改狀態
+        order.setStatus("paid");
+
+        // 4. 存檔
+        Orders saved = ordersRepo.save(order);
+
+        // 5. 回傳
+        return convertToDto(saved);
     }
 
 }

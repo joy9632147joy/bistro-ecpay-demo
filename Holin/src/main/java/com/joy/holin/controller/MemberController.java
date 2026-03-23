@@ -1,5 +1,7 @@
 package com.joy.holin.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,8 +41,8 @@ public class MemberController {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("帳號或密碼錯誤");
 		}
 
-		String token = JwtToken.createTokenWithRole(members.getEmail(), "CUSTOMER");
-		return ResponseEntity.ok(token);
+		String jwtToken = JwtToken.createTokenWithRole(members.getEmail(), "CUSTOMER");
+		return ResponseEntity.ok(Map.of("token", jwtToken));
 	}
 
 }

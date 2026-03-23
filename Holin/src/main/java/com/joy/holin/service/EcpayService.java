@@ -39,8 +39,8 @@ public class EcpayService {
         params.put("TotalAmount", String.valueOf(order.getTotalPrice()));
         params.put("TradeDesc", "HoLin53周邊商品");
         params.put("ItemName", "HoLin53周邊商品");
-        params.put("ReturnURL", "http://localhost:8080/api/payment/notify"); // 綠界回調
-        params.put("ClientBackURL", "http://localhost:8080/order-complete.html"); // 付款完成導向
+        params.put("ReturnURL", "http://localhost:8081/api/payment/notify"); // 綠界回調
+        params.put("ClientBackURL", "http://localhost:8081/HolinProject_Products.html"); // 付款完成導向
         params.put("ChoosePayment", "Credit");
         // 2. 產生 CheckMacValue
         String checkMacValue = generateCheckMacValue(params);

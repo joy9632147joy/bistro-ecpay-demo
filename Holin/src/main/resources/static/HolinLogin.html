@@ -402,8 +402,23 @@
             }
 
             if (valid) {
-                // TODO: 呼叫後端 /api/members/login
-                console.log('submit', { email, pwd });
+                fetch('http://localhost:8081/api/customer/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, pwd: pwd })
+                })
+                    .then(res => {
+                        if (res.ok) return res.json();  // ← 這裡改成 json()
+                        throw new Error('帳號或密碼錯誤');
+                    })
+                    .then(data => {                     // ← 這裡接 json 回來的資料
+                        localStorage.setItem('token', data.token);
+                        window.location.href = 'HolinProject_Products.html';
+                    })
+                    .catch(err => {
+                        document.getElementById('pwdError').textContent = err.message;
+                        document.getElementById('pwdError').style.display = 'block';
+                    });
             }
         });
 

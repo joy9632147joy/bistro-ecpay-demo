@@ -266,10 +266,10 @@ async function checkout() {
     }
 
     // TODO: 從登入狀態取得 memberId（之後串 JWT 再補）
-    const memberId = 1;
+    // 注意：你後面的 API Port 是 8081 還是 8080？請依你實際 Spring Boot 的 Port 為準
+
 
     const orderRequest = {
-        memberId: memberId,
         orderItems: cart.map(item => ({
             productId: item.id,
             quantity: item.qty
@@ -277,19 +277,50 @@ async function checkout() {
     };
 
     try {
-        const res = await fetch('http://localhost:8080/api/orders', {
+        // 1. 建立訂單
+        const res = await fetch('http://localhost:8081/api/orders', { // 換成正確的 port
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                // 如果你有用 JWT，記得這裡要帶入 Token
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            },
             body: JSON.stringify(orderRequest)
         });
 
         if (res.ok) {
             const order = await res.json();
-            alert(`訂單建立成功！訂單編號：${order.id}`);
+            alert(`訂單建立成功！準備前往結帳...`);
             cart = [];
             renderCart();
             closeCartPanel();
-            // TODO: 導向金流頁面
+
+            // ===== 2. 呼叫綠界金流 API =====
+            try {
+                // 拿著剛剛建立好的訂單 ID (order.id) 去要綠界表單
+                const paymentRes = await fetch(`http://localhost:8081/api/payment/form/${order.id}`, {
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem('token')
+                    }
+                });
+                const formHtml = await paymentRes.text(); // 綠界回傳的是 HTML 字串
+
+                // 把回傳的 HTML 表單塞入當前網頁的 body 最後面
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = formHtml;
+                document.body.appendChild(tempDiv);
+
+                // 解決 XSS 攻擊，手動抓取剛剛塞進去的表單並送出
+                document.getElementById('ecpayForm').submit();
+
+                // 注意：你的 EcpayService 裡面已經有寫 <script>document.getElementById('ecpayForm').submit();</script>
+                // 所以只要把 HTML 塞進 DOM，瀏覽器就會自動把使用者導向綠界了！
+
+            } catch (payErr) {
+                console.error('取得金流表單失敗', payErr);
+                alert('無法連接金流服務');
+            }
+
         } else {
             alert('訂單建立失敗，請再試一次');
         }
@@ -383,7 +414,7 @@ let products = [
 // ===== 從 API 載入周邊商品 =====
 async function loadMerchProducts() {
     try {
-        const res = await fetch('http://localhost:8080/api/products/category/7');
+        const res = await fetch('http://localhost:8081/api/products/category/7');
         const data = await res.json();
         const apiMerch = data.map(p => ({
             id: p.id,               // 資料庫真實 id（數字）

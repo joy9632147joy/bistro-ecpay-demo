@@ -1,17 +1,12 @@
 package com.joy.holin.config;
 
 import com.joy.holin.repo.MemberRepo;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.ProviderManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -20,12 +15,6 @@ import org.springframework.security.config.Customizer;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
-        private final MemberRepo membersRepo;
-
-        public SecurityConfig(MemberRepo membersRepo) {
-                this.membersRepo = membersRepo;
-        }
 
         @Bean
         public PasswordEncoder passwordEncoder() {
@@ -44,6 +33,8 @@ public class SecurityConfig {
                                                 .requestMatchers("/api/customer/verify-reset-token").permitAll()
                                                 .requestMatchers("/api/customer/reset-password").permitAll()
                                                 .requestMatchers("/api/products/**").permitAll()
+                                                .requestMatchers("/api/checkout/**").permitAll()
+                                                .requestMatchers("/api/payment/form/**").permitAll()
                                                 .requestMatchers("/api/orders/**").hasRole("CUSTOMER")
                                                 .requestMatchers("/api/customer/**").hasRole("CUSTOMER")
                                                 .anyRequest().permitAll());
