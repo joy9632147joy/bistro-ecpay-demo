@@ -1,4 +1,4 @@
-# Holin Bistro - 購物車與綠界金流串接練習 (bistro-ecpay-demo)
+# Holin Bistro - 購物車與綠界金流串接demo
 
 ### 專案介紹
 這是一個模擬精釀餐酒館（Holin Bistro）線上周邊商品販售的 Side Project。
